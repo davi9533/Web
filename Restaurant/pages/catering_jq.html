@@ -1,0 +1,242 @@
+<html>
+	<head>
+	<title>Catering</title>
+		<link rel = "stylesheet" href = "../main_proj.css">
+		<script type="text/javascript" src="../jquery.js"></script>
+		<script type="text/javascript">
+			
+		$("document").ready(function() {
+			$("td").css("padding", "5px").css("font-size","20px").css("color", "white");
+			$("p").css("padding", "5px").css("color", "blue").css("font-weight", "bold").css("font-size", "20px");
+			$("fieldset").css("border-color", "red").css("width", "60%").css("padding-top", "50px").css("padding-bottom", "20px").css("padding-left" , "20px").css("padding-right", "20px");
+			$(":text").css("background-color", "red");
+		
+		});
+		</script>
+
+	</head>
+	<body>
+		<header>
+				<img src = "../images/logo.jpg" height = "60" width = "80">
+				<h1>BAYVIEW RESTAURANT</h1>
+				<a href="home_css.html">Home</a>&nbsp;&nbsp;&nbsp;
+				<a href="menu.html">Menu</a>&nbsp;&nbsp;&nbsp;
+				<a href="giftCard_js.html">GiftCard</a>&nbsp;&nbsp;&nbsp;
+				<a href="jsreservation.html">Reservation</a>&nbsp;&nbsp;&nbsp;
+				<a href="catering_jq.html">Catering</a>&nbsp;&nbsp;&nbsp;
+				<a href="location.html">Locations</a>&nbsp;&nbsp;&nbsp;
+				<a href="cust_feedback_js.html">Feedback</a>
+		</header>
+
+		<center>
+	    <fieldset>
+		<p>Personal information</p>
+		<form method="post" action="home_css.html" id="order" value = "demo">
+		    <table>
+
+				<tr>
+					<td>First Name:</td>
+					<td><input type="text" name="fname" id="fname">
+					<span id = "fname_error"> * </span></td>
+				</tr>
+				<tr>
+					<td>Last Name:</td>
+					<td><input type="text" name="lname" id="lname">
+					<span id = "lname_error"> * </span></td>
+				</tr>
+				<tr>
+					<td>Address:</td>
+					<td><input type="text" name="adress"></td>
+				</tr>
+				<tr>
+					<td>Postal code:</td>
+					<td><input type="text" name="postal"></td>
+				</tr>
+				<tr>
+					<td>Email address:</td>
+					<td><input type="email" name="email" id="email">
+					<span id = "email_error"> * </span></td>
+				</tr>
+				<tr>
+					<td>Phone no primary:</td>
+					<td><input type="text" name="phone1"></td>
+				</tr>
+				<tr>
+					<td>Phone no secondary:</td>
+					<td><input type="text" name="phone2"></td>
+				</tr>
+				<tr>
+				    <td><b><font color=blue><h2><br>Food Information</h2></font></b></td>
+				</tr>
+				<tr>
+				    <td>Select event:</td>
+					<td><select name="event">
+								<option value="ann">Anniversary</option>
+								<option value="baby">Baby Shower</option>
+								<option value="wedd">Wedding</option>
+								<option value="birt">Party Birthday</option>
+								<option value="cor">Corporate Event</option>
+								<option value="oth">Party Other</option>
+								</select></td>
+				<tr>
+				<tr>
+				    <td>Select the food</td>
+					<td><select name="food" >
+								<option value="break">Breakfast</option>
+								<option value="brunch">Brunch</option>
+								<option value="lunch">Lunch</option>
+								<option value="dinner">Dinner</option>
+								<option value="other">other</option>
+								</select></td>
+				</tr>
+				<tr>
+				    <td>Select the Appetizer:</td>
+					<td><select name="starter" multiple>
+								<option value="sa">Samosa</option>
+								<option value="ve">Vengaya Pakoda</option>
+								<option value="sw">Sweet Corn-Channa Fritters</option>
+								</select></td>
+				</tr>
+				<tr>
+				    <td>Select the Main Course:</td>
+					<td><select name="starter" multiple>
+								<option value="sh">Shahi Paneer</option>
+								<option value="bir">Biryani</option>
+								<option value="na">Naan</option>
+								<option value="bu">Butter Chicken</option>
+								<option value="pa">Palak Paneer</option>
+								</select></td>
+				</tr>
+				<tr>
+				    <td>Select the Dessert:</td>
+					<td><select name="starter" multiple>
+								<option value="pa">Payasam</option>
+								<option value="ja">Jalebi</option>
+								<option value="la">Laddu</option>
+								<option value="gu">Gulab Jamun</option>
+								<option value="my">Mysore Pak</option>
+								<option value="pe">Peda</option>
+								<option value="so">Soan Papdi</option>
+								<option value="ra">Rasgulla</option>
+								<option value="ku">Kulfi</option>
+								<option value="ke">kesari Bat</option>
+								<option value="ra">Ras Malai</option>
+								<option value="un">Unni Appam</option>
+								<option value="ob">Obbattu</option>
+								<option value="ph">Phirni</option>
+								<option value="sa">Sandesh</option>
+								</select></td>
+				</tr>
+				<tr>
+				    <td>Select the Drinks:</td>
+					<td><select name="starter" multiple>
+								<option value="fa">Falooda</option>
+								<option value="jal">Jal Jeera</option>
+								<option value="la">Lassi</option>
+								<option value="ch">Chaach</option>
+
+								</select></td>
+				</tr>
+				<tr>
+				    <td>No of Guests:</td>
+					<td><input type="text" name="guest"></td>
+				<tr>
+				    <td><b><font color=blue><h2><br>Food Delivery</h2></font></b></td>
+				</tr>
+				<tr>
+				    <td>Select Date:</td>
+					<td><input type="date" name="da"></td>
+				</tr>
+				<tr>
+				     <td>Select Time:</td>
+					 <td><input type="time" name="ti"></td>
+				</tr>
+				<tr>
+				     <td>Location:</td>
+					 <td><input type="text" name="ti"></td>
+				</tr>
+				<tr>
+				     <td>Additional Information:</td>
+					 <td>
+					   <textarea rows="3" cols="10"></textarea>
+			         </td>
+				</tr>
+				<tr>
+						<td><br><input type="button" value="submit" onclick = "validateInfo()"></td>
+						<td><br><input type="reset" name="Resetf" value="Reset Fields"></td>
+				</tr>
+
+			</table>
+		  </form>
+		</fieldset>
+		</center>
+
+		<script>
+
+			function validateInfo(){
+			var fname = document.getElementById("fname").value;
+			var lname = document.getElementById("lname").value;
+			var email = document.getElementById("email").value;
+			var isValid = true;
+
+			if(fname==""){
+				document.getElementById("fname_error").innerHTML = "This field is required";
+				isValid = false;
+			}
+			else{
+				document.getElementById("fname_error").innerHTML = " ";
+			}
+
+
+			if(lname==""){
+				document.getElementById("lname_error").innerHTML = "This field is required";
+				isValid = false;
+			}
+			else{
+			document.getElementById("lname_error").innerHTML = " ";
+			}
+
+			if(email==""){
+				document.getElementById("email_error").innerHTML = "This field is required";
+				isValid = false;
+			}
+			else{
+				document.getElementById("email_error").innerHTML = " ";
+			}
+
+			if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(order.email.value))
+			{
+				isValid = true;
+			}
+			else
+			{
+				alert("You have entered an invalid email address!");
+				isValid = false;
+			}
+
+
+			if(isValid){
+				document.getElementById("order").submit();
+			}
+			}
+		</script>
+
+
+		<footer>
+			<h2 align="center"><u>CONTACT US</u></h2>
+        <p align="center"><b>Head Office</b>:-Bayview Restaurant
+            <br> Open – 07:00 AM Close – 01:30 AM
+            <br>
+            <b>Contact -</b> +647-540-8888;
+            <img src="../images/Email.png" height="20" width="20">info@bayview.in
+            <br>
+            <br>
+         <div>
+            &copy;Copyright Star Hotels
+            <img src="../images/facebook.png" height="17" width="25">Facebook</img>
+            <img src="../images/twitter.png" height="17" width="15">Twitter</img>
+            <img src="../images/instagram.png" height="17" width="20">Instagram</img>
+         </div>
+		</footer>
+	</body>
+</html>

@@ -1,0 +1,190 @@
+<html>
+	<head>
+		<link rel = "stylesheet" href = "../main_proj.css">
+		
+		<script type="text/javascript" src="../jquery.js"></script>
+		<script type="text/javascript">
+			$("document").ready(function() {
+				  $(":checkbox").wrap("<span style='background-color:red'>");
+				  $(":text").css("background-color", "red");
+				  $("td").css("padding", "5px").css("color", "white").css("font-size", "20px").css("font-family", "Kristen ITC");
+				  $("p").css("color", "white").css("font-family", "Kristen ITC");
+				  $("#p1").css("font-family", "Kristen ITC").css("color", "yellow").css("font-size", "25px");
+					
+			});
+		</script>
+	</head>
+	<body>
+		<header>
+				<img src = "../images/logo.jpg" height = "60" width = "80">
+				<h1>BAYVIEW RESTAURANT</h1>
+				<a href="home_css.html">Home</a>&nbsp;&nbsp;&nbsp;
+				<a href="Menu_css.html">Menu</a>&nbsp;&nbsp;&nbsp;
+				<a href="giftCard_js.html">GiftCard</a>&nbsp;&nbsp;&nbsp;
+				<a href="jsreservation.html">Reservation</a>&nbsp;&nbsp;&nbsp;
+				<a href="catering_jq.html">Catering</a>&nbsp;&nbsp;&nbsp;
+				<a href="location.html">Locations</a>&nbsp;&nbsp;&nbsp;
+				<a href="cust_feedback_js.html">Feedback</a>
+		</header>
+		
+		<br><br><br><br><br><br>
+		
+		<center>
+		<form method = "post" action = "home_css.html" value = "demo" id = "frm">
+		<table>
+		<tr>
+			<td>First_Name :</td>
+			<td><input type = "text" id = "fname" name = "textfname" placeholder = "enter your first name" >
+			<span id = "fname_error"> * </span></td>
+		</tr>
+		<tr>
+			<td>Last_Name :</td>
+			<td><input type ="text" id = "lname" name = "textlname" placeholder = "Enter your last name" >
+			<span id = "lname_error"> * </span></td>
+		</tr>
+		<tr>
+			<td>Phone: </td>
+			<td><input type = "number" id = "phnum" name = "textphn" placeholder = "Enter your phone number"></td>
+		</tr>
+		
+		<tr>
+			<td>E-mail :</td>
+			<td><input type = "text" id = "email" name = "textmail" placeholder = "Enter your email">
+			<span id = "email_error"> * </span></td>
+		</tr>
+		
+		</table> 
+		
+		<p><b>Please select the restaurant branch</b> <br><br>
+		Select Branch: <select name = "Branch">
+			<option value = "bramp"> Brampton </option>
+			<option value = "missi">Missisauga</option>
+			<option value = "Etobi">Etobicoke</option>
+			<option value = "Torondwn">Toronto Down Town</option>
+			<option value = "Berr">Berry</option>
+			</select></p>
+		<br>
+		<br>
+		<p><b>Please select the check box</b></p>
+		<table>
+		<tr>
+			<td>Restaurant Ambiance   </td>
+			<td><input type = "checkbox" name = "chck1" id = "exe2">
+			<label for = "exe2">Excellent</label>
+			<input type = "checkbox" name = "chck1" id = "goo2">
+			<label for ="goo2" >Good</label>
+			<input type = "checkbox" name = "chck1" id = "ave2">
+			<label for = "ave2" >Average</label>
+			<input type = "checkbox" name = "chck1" id = "poor2">
+			<label for = "poor2">Poor</label></td>
+		</tr>
+		<tr>
+			<td>Service</td>
+			<td><input type = "checkbox" name = "chck2" id = "exel">
+			<label for = "exel">Excellent</label>
+			<input type = "checkbox" name = "chck2" id = "good">
+			<label for ="good" >Good</label>
+			<input type = "checkbox" name = "chck2" id = "aver">
+			<label for = "aver" >Average</label>
+			<input type = "checkbox" name = "chck2" id = "poorf">
+			<label for = "poorf">Poor</label></td>
+		</tr>
+		<tr>
+			<td>Food</td>
+			<td><input type = "checkbox" name = "chck3" id = "exe">
+			<label for = "exe">Excellent</label>
+			<input type = "checkbox" name = "chck3" id = "goo">
+			<label for ="goo" >Good</label>
+			<input type = "checkbox" name = "chck3" id = "ave">
+			<label for = "ave" >Average</label>
+			<input type = "checkbox" name = "chck3" id = "poor">
+			<label for = "poor">Poor</label></td>
+		</tr>
+		<tr>
+			<td>Cleanliness</td>
+			<td><input type = "checkbox" name = "chck4" id = "exe1">
+			<label for = "exe1">Excellent</label>
+			<input type = "checkbox" name = "chck4" id = "goo1">
+			<label for ="goo1" >Good</label>
+			<input type = "checkbox" name = "chck4" id = "ave1">
+			<label for = "ave1" >Average</label>
+			<input type = "checkbox" name = "chck4" id = "poor1">
+			<label for = "poor1">Poor</label></td>
+		</tr>
+		<tr>
+			<td>Overall Experience</td>
+			<td><input type = "checkbox" name = "chck5" id = "exef">
+			<label for = "exef">Excellent</label>
+			<input type = "checkbox" name = "chck5" id = "gooh">
+			<label for ="gooh" >Good</label>
+			<input type = "checkbox" name = "chck5" id = "aveb">
+			<label for = "aveb" >Average</label>
+			<input type = "checkbox" name = "chck5" id = "poodr">
+			<label for = "poodr">Poor</label></td>
+		</tr>
+		</table>
+		</center>
+		<br><br>
+		<p>Comments :<textarea name = "Comments" placeholder = "If you have any comments, Please enter here" > </textarea></p>
+		<br><br>
+		<input type = "button" value = "Submit" onclick = "validateInfo()">&nbsp&nbsp
+		<input type = "reset" name = "btnrest" value = "Reset">
+		<p id = "p1"><b>Thank you for your time and filling the Feedback</b></p>
+		</form>
+		
+		<script>
+
+			function validateInfo(){
+			var fname = document.getElementById("fname").value;
+			var lname = document.getElementById("lname").value;
+			var email = document.getElementById("email").value;
+			var isValid = true;
+			
+			if(fname==""){
+				document.getElementById("fname_error").innerHTML = "This is required field";
+				isValid = false;
+			}
+			else{
+				document.getElementById("fname_error").innerHTML = " ";	
+			}
+			
+			
+			if(lname==""){
+				document.getElementById("lname_error").innerHTML = "This is required field";
+				isValid = false;
+			}
+			else{
+				document.getElementById("lname_error").innerHTML = " ";
+			}
+			
+			if(email==""){
+				document.getElementById("email_error").innerHTML = "This is required field";
+			}
+			else{
+				document.getElementById("email_error").innerHTML = " ";
+			}
+				if(isValid){
+					document.getElementById("frm").submit();
+				}
+			}
+			
+		</script>
+		
+		<footer>
+			<h2 align="center"><u>CONTACT US</u></h2>
+        <p align="center"><b>Head Office</b>:-Bayview Restaurant
+            <br> Open – 07:00 AM Close – 01:30 AM
+            <br>
+            <b>Contact -</b> +647-540-8888;
+            <img src="../images/Email.png" height="20" width="20">info@bayview.in
+            <br>
+            <br>
+         <div>
+            &copy;Copyright Star Hotels
+            <img src="../images/facebook.png" height="17" width="25">Facebook</img>
+            <img src="../images/twitter.png" height="17" width="15">Twitter</img>
+            <img src="../images/instagram.png" height="17" width="20">Instagram</img>
+         </div>
+		</footer>
+	</body>
+</html>

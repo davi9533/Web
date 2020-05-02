@@ -1,0 +1,25 @@
+			body{
+				background-image : url('images/thi (1).jpg');
+				text-align: center;
+			}
+
+			header{
+				color : #990000;
+				font-size : 20;
+				text-align : center;
+				padding : 10px;
+				font-family : Jokerman;
+
+			}
+
+			a{
+					text-decoration : none;
+					color : #ffff99;
+					font-size : 18;
+					font-family : Lucida Sans;
+			}
+
+			footer{
+				color : white;
+				text-align : center;
+			}

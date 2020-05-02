@@ -1,0 +1,219 @@
+<html>
+	<head>
+		<link rel = "stylesheet" href = "../main_proj.css">
+		
+		<script type="text/javascript" src="../jquery.js"></script>
+		<script type="text/javascript">
+			$("document").ready(function() {
+				  $(":radio").wrap("<span style='background-color:red'>");
+				  $(":text").css("background-color", "red");
+				  $("legend").css("color", "#ffff80").css("font-size", "20px").css("font-family", "Kristen ITC");
+				  $("td").css("padding", "5px").css("color", "white").css("font-size", "15px").css("font-family", "Kristen ITC");
+				  $("fieldset").css("border-color", "red").css("width", "45%").css("padding-top", "50px").css("padding-bottom", "20px").css("padding-left" , "20px").css("padding-right", "20px");
+
+					
+			});
+		</script>
+	</head>
+	<body>
+		<header>
+			<img src = "../images/logo.jpg" height = "60" width = "80">
+			<h1>BAYVIEW RESTAURANT</h1>
+			<a href="home_css.html">Home</a>&nbsp;&nbsp;&nbsp;
+			<a href="menu.html">Menu</a>&nbsp;&nbsp;&nbsp;
+			<a href="giftCard_js.html">GiftCard</a>&nbsp;&nbsp;&nbsp;
+			<a href="jsreservation.html">Reservations</a>&nbsp;&nbsp;&nbsp;
+			<a href="catering_jq.html">Catering</a>&nbsp;&nbsp;&nbsp;
+			<a href="location.html">Locations</a>&nbsp;&nbsp;&nbsp;
+			<a href="cust_feedback_js.html">Feedback</a>
+		</header>
+		
+		<br><br><br><br><br><br>
+		
+		<center>
+		<fieldset>
+	<legend><b>Fill in the receivers details</b></legend>
+	<form method = "post" action = "home_css.html" id = "frm1" value = "demo">
+	<table>
+	<tr>
+		<td>First_Name :  </td>
+		<td><input type = "text" name = "txtfname" id = "fname" placeholder = "Enter your first name">
+		<span id = "fname_error"> * </span></td>
+	</tr>
+	<tr>
+		<td>Last_Name :</td>
+		<td><input type = "text" name = "txtlname" id = "lname" placeholder = "Enter your last name">
+		<span id = "lname_error"> * </span></td>
+	</tr>
+	<tr>
+		<td>Contact_no :</td>
+		<td><input type = "number" name = "txtno" id = "cntno" placeholder = "Enter youe contact number" max = "10"></td>
+	</tr>
+	<tr>
+		<td>E-mail :</td>
+		<td><input type = "text" name = "textmail" id = "email1" placeholder = "Enter your email">
+		<span id = "email1_error"> * </span></td>
+	</tr>
+	<tr>
+		<td>Re-type E-mail</td>
+		<td><input type = "text" name = "textmail" id="email2" placeholder = "Please re-type your email"> 
+		<span id ="email2-error"> * </span><br>
+		<span id = "email3-error"> * </span>
+</td>
+	</tr>
+	</table>
+	</fieldset>
+	
+	<br><br>
+	
+	<fieldset>
+	<legend><b>Fill in the requirements below for gift card</b></legend>
+	
+	<table>
+	<tr>
+		<td>Dollar value </td>
+		<td><input type = "radio" name = "chck1" id = "amt">
+		<label for = "amt">$100</label>
+		<input type = "radio" name = "chck1" id = "amt1">
+		<label for = "amt1">$50</label>
+		<input type = "radio" name = "chck1" id = "amt2">
+		<label for = "amt2">$25</label>
+		<input type = "radio" name = "chck1" id = "amt3">
+		<label for = "amt3">Other</label></td>
+	</tr>
+	<tr>
+		<td>Other Amout :</td>
+		<td><input type = "number" name = "txtamt" placeholder = "Enter other Amout"></td>
+	</tr>
+	<tr>
+		<td>Payment Method</td>
+		<td><input type = "radio" name = "chck1" id = "mstcard">
+		<label for = "mstcard">Master card</label>
+		<input type = "radio" name = "chck1" id = "visa">
+		<label for = "visa">Visa</label>
+		<input type = "radio" name = "chck1" id = "debt">
+		<label for = "debt">Debit</label></td>
+	</tr>
+	<tr>
+		<td>Card Holder Name :</td>
+		<td><input type = "text" name = "txtholdname" id = "cardname" placeholder = "Enter card holder name">
+		<span id = "cardname_error">*</span> </td>
+	</tr>
+	<tr>
+		<td>Card number :</td>
+		<td><input type = "text" name = "txtcardno" id  = "cardnum" placeholder = "Enter your card number">
+		<span id = "cardnum_error">*</span></td>
+	</tr>
+	<tr>
+		<td>Expiry Date :</td>
+		<td><input type = "date" name = "txtexdate" ></td>
+	</tr>
+	<tr>
+		<td>Cvv number :</td>
+		<td><input type = "text" name = "txtcvv" id = "cvv" placeholder = "Enter the number" max = "3">(Back of the card)
+		<span id = "cvv_error">*</span></td>
+	</tr>
+	<tr>
+		<td><input type = "button" value = "Submit" onclick = "validateInfo()">&nbsp;&nbsp;
+		<input type = "reset" name = "btnrest" value = "Reset"></td>
+	</tr>
+	</table>
+	</form>
+	</fieldset>
+	</center>
+	<script>
+
+			function validateInfo(){
+			var fname = document.getElementById("fname").value;
+			var lname = document.getElementById("lname").value;
+			var email1 = document.getElementById("email1").value;
+			var email2 = document.getElementById("email2").value;
+			var cardname = document.getElementById("cardname").value;
+			var cardnum = document.getElementById("cardnum").value;
+			var cvv = document.getElementById("cvv").value;
+			var isValid = true;
+			
+			if(fname==""){
+				document.getElementById("fname_error").innerHTML = "This is required field";
+				isValid = false;
+			}
+			else{
+				document.getElementById("fname_error").innerHTML = " ";
+			}
+			
+			
+			if(lname==""){
+				document.getElementById("lname_error").innerHTML = "This is required field";
+				isValid = false;
+			}
+			else{
+			document.getElementById("lname_error").innerHTML = " ";
+			}
+			
+			if(email1==""){
+				document.getElementById("email1_error").innerHTML = "This is required field";
+			}
+			else{
+				document.getElementById("email1_error").innerHTML = " ";
+			}
+			
+			if(email2==""){
+				document.getElementById("email2-error").innerHTML = "This is required field";
+			}
+			else{
+				document.getElementById("email2-error").innerHTML = " ";
+			}
+			
+			if(cardname==""){
+				document.getElementById("cardname_error").innerHTML = "This is required field";
+			}
+			else{
+				document.getElementById("cardname_error").innerHTML = " ";
+			}
+			
+			if(cardnum==""){
+				document.getElementById("cardnum_error").innerHTML = "This is required field";
+			}
+			else{
+				document.getElementById("cardnum_error").innerHTML = " ";
+			}
+			
+			if(cvv==""){
+				document.getElementById("cvv_error").innerHTML = "  This is required field";
+			}
+			else{
+				document.getElementById("cvv_error").innerHTML = " ";
+			}
+			
+			if(email1!=email2){
+					document.getElementById("email3-error").innerHTML="email1 and email2 should be similar";
+					isValid=false;
+				}
+				else{
+					document.getElementById("email3-error").innerHTML = " ";
+				}
+				if(isValid){
+					document.getElementById("frm1").submit();
+				}
+			}
+		</script>
+		
+	
+	<footer>
+			<h2 align="center"><u>CONTACT US</u></h2>
+        <p align="center"><b>Head Office</b>:-Bayview Restaurant
+            <br> Open – 07:00 AM Close – 01:30 AM
+            <br>
+            <b>Contact -</b> +647-540-8888;
+            <img src="../images/Email.png" height="20" width="20">info@bayview.in
+            <br>
+            <br>
+         <div>
+            &copy;Copyright Star Hotels
+            <img src="../images/facebook.png" height="17" width="25">Facebook</img>
+            <img src="../images/twitter.png" height="17" width="15">Twitter</img>
+            <img src="../images/instagram.png" height="17" width="20">Instagram</img>
+         </div>
+		</footer>
+	</body>
+</html>

@@ -1,0 +1,293 @@
+<html>
+	<head>
+		<title>Location</title>
+		<link rel = "stylesheet" href = "../main_proj.css">
+		<script type="text/javascript" src="../jquery.js"></script>
+		 
+		 <script>
+			$("document").ready(function(){
+			$("#box").ready(function(){
+				var div = $("#box");
+				var div1 = $("#box1");
+				var div2 = $("#box2");
+				startAnimation();
+				function startAnimation(){
+				  div.animate({height: 155}, "slow");
+				  div.animate({width: 200}, "slow");
+				  div.css("background-color", "black");  
+				  div.animate({height: 50}, "slow");
+				  div.animate({width: 5}, "slow", startAnimation);
+				  
+				  div1.animate({height: 50}, "slow");
+				  div1.animate({width: 5}, "slow");
+				  div1.animate({height: 155}, "slow");
+				  div1.animate({width: 200}, "slow", startAnimation);
+				  div1.css("background-color", "red");  
+				  
+				 
+				  div2.animate({width: 200}, "slow");
+				  div2.animate({height: 50}, "slow");
+				  div2.animate({height: 150}, "slow");
+				  div2.animate({width: 5}, "slow", startAnimation);
+				  div2.css("background-color", "gray");  
+				  
+				  
+				}
+			  });
+			});
+		</script>
+		<style>
+			#box{
+				width:150px;
+				height:50px;
+				position:absolute;
+				left:650px;
+				top:375px;
+				z-index:-1;
+				
+			}
+			#box1{
+				width:150px;
+				height:50px;
+				position:absolute;
+				left:230px;
+				top:375px;
+				z-index:-1;
+			
+			}
+			#box2{
+				width:150px;
+				height:50px;
+				position:absolute;
+				left:1150px;
+				top:375px;
+				z-index:-1;
+			
+			}
+			#aside1{
+				float : left;
+				height : 200px;
+				width : 520px;
+			}
+
+			#loc{
+				height:60;
+				width: 60;
+
+
+			}
+
+			#pa1{
+				font-size: 30;
+				color : #ffcc66;
+				font-family : Kristen ITC;
+			}
+
+			#p1{
+				padding : 5px;
+				color : white;
+				font-size : 15;
+				font-family : Kristen ITC;
+
+			}
+
+			#pa2{
+				font-size: 30;
+				color : #ffcc66;
+				text-align : center;
+				font-family : Kristen ITC;
+			}
+
+			#p2{
+				color : white;
+				font-size : 15;
+				font-family : Kristen ITC;
+				text-align : center;
+			}
+
+			main{
+				float : left;
+				height : 200px;
+				width : 450px;
+				font-family: Kristen ITC;
+			}
+
+			a{
+				font-family : Lucida Sans;
+			}
+
+			* {box-sizing: border-box;}
+
+			/* Button used to open the chat form - fixed at the bottom of the page */
+			.open-button {
+			  background-color: #555;
+			  color: white;
+			  padding: 16px 20px;
+			  border: none;
+			  cursor: pointer;
+			  opacity: 0.6;
+			  position: fixed;
+			  bottom: 23px;
+			  right: 28px;
+			  width: 280px;
+			}
+
+			/* The popup chat - hidden by default */
+			.chat-popup {
+			  display: none;
+			  position: fixed;
+			  bottom: 0;
+			  right: 15px;
+			  border: 3px solid #f1f1f1;
+			  z-index: 9;
+			}
+
+			/* Add styles to the form container */
+			.form-container {
+			  max-width: 300px;
+			  padding: 10px;			 
+			  background-color: gray;
+			  border:none;
+			}
+
+			/* Full-width textarea */
+			.form-container textarea {
+			  width: 100%;
+			  padding: 15px;
+			  margin: 5px 0 22px 0;
+			  border: none;
+			  background: #f1f1f1;
+			  resize: none;
+			  min-height: 150px;
+			}
+
+			/* When the textarea gets focus, do something */
+			.form-container textarea:focus {
+			  background-color: #ddd;
+			  outline: none;
+			}
+
+			/* Set a style for the submit/send button */
+			.form-container .btn {
+			  background-color: black;
+			  color: white;
+			  padding: 16px 20px;
+			  border: none;
+			  cursor: pointer;
+			  width: 100%;
+			  margin-bottom:10px;
+			  opacity: 0.8;
+			}
+
+			/* Add a red background color to the cancel button */
+			.form-container .cancel {
+			  background-color: white;
+			   color: black;
+			}
+
+			/* Add some hover effects to buttons */
+			.form-container .btn:hover, .open-button:hover {
+			  opacity: 1;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<div id="box">	</div>	
+		<div id="box1">	</div>	
+		<div id="box2">  </div>	
+		<button class="open-button" onclick="openForm()">Chat</button>
+
+		<div class="chat-popup" id="myForm">
+		  <form action="" class="form-container">
+			
+			<textarea placeholder="Type message.." name="msg" required></textarea>
+
+			<button type="submit" class="btn">Send</button>
+			<button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+		  </form>
+		</div>
+
+		<script>
+		function openForm() {
+		  document.getElementById("myForm").style.display = "block";
+		}
+
+		function closeForm() {
+		  document.getElementById("myForm").style.display = "none";
+		}
+		</script>
+		
+		<header>
+				<img src = "../images/logo.jpg" height = "60" width = "80">
+				<h1>BAYVIEW RESTAURANT</h1>
+				<a href="home_css.html">Home</a>&nbsp;&nbsp;&nbsp;
+				<a href="menu.html">Menu</a>&nbsp;&nbsp;&nbsp;
+				<a href="giftCard_js.html">GiftCard</a>&nbsp;&nbsp;&nbsp;
+				<a href="jsreservation.html">Reservations</a>&nbsp;&nbsp;&nbsp;
+				<a href="catering_jq.html">Catering</a>&nbsp;&nbsp;&nbsp;
+				<a href="location.html">Locations</a>&nbsp;&nbsp;&nbsp;
+				<a href="cust_feedback_js.html">Feedback</a>
+		</header>
+
+		<br><br><br><br><br><br>
+
+
+			<aside id = "aside1"><p id = "pa1">&emsp;&emsp;&emsp;&emsp;Brampton</p>
+				<p id = "p1">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;1988 Avenue Rd, 2nd Floor, <br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; Brampton,<br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Toronto, M5M 4A4</p>
+			</aside>
+
+			<main id = "main"><p id = "pa1">Barrie</p>
+			<p id = "p1">2560 Shepard Avenue<br>Unit 8 Barrie,<br> ON L5A 4E1<br>Canada</p>
+			</main>
+
+			<aside id = "aside2"><p id = "pa1">Etobicoke</p>
+				<p id = "p1">2642 Islington Avenue<br>Toronto, ON M9V<br>Canada</p>
+			</aside>
+
+
+			<br><br><br><br>
+
+			<p id = "pa2">Sunday – Thursday</p>
+			<p id = "p2">	Lunch: 12:00 pm to 3:00 pm<br>
+				Dinner: 5:30 pm to 10:00 pm</p>
+			<p id = "pa2">Friday - Saturday</p>
+			<p id = "p2"> Lunch: 12:00 pm to 3:00 pm<br>
+				Dinner: 5:30 pm to 1:00 am</p>
+			<br><br>
+			<p id = "pa2">Contact Us</p>
+			<p id = "p2">Contact us to discuss an upcoming special event or to talk about catering your next party. We look forward to hearing from you and serving the best Indian restaurant food in Toronto.</p>
+
+			<br><br>
+
+		<p id = "pa2">Reach Us<br><img id="loc" src="../images/loc.png"></p>
+
+		<p id = "p2"><a href="https://www.google.ca/maps/place/46+Woodbine+Downs+Blvd,+Etobicoke,+ON+M9W+6N5/@43.7355085,-79.6150812,15z/data=!3m1!4b1!4m5!3m4!1s0x882b3baabed2756d:0x9d5a241834f6137d!8m2!3d43.7355088!4d-79.6063264">Bayview Restaurant<br>2766 Dundas St. W,<br>Toronto,ON M6P1Y3,Canada</a>
+
+		<br><br>
+
+		<p id = "pa2">General Manager</p>
+		<p id = "p2">John Wick<br>647.540.8888</p>
+
+		<br><br><br><br><br>
+
+
+
+		<footer>
+			<h2 align="center"><u>CONTACT US</u></h2>
+        <p align="center"><b>Head Office</b>:-Bayview Restaurant
+            <br> Open – 07:00 AM Close – 01:30 AM
+            <br>
+            <b>Contact -</b> +647-540-8888;
+            <img src="../images/Email.png" height="20" width="20">info@bayview.in
+            <br>
+            <br>
+         <div>
+            &copy;Copyright Star Hotels
+            <img src="../images/facebook.png" height="17" width="25">Facebook</img>
+            <img src="../images/twitter.png" height="17" width="15">Twitter</img>
+            <img src="../images/instagram.png" height="17" width="20">Instagram</img>
+         </div>
+		</footer>
+	</body>
+</html>

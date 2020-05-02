@@ -1,0 +1,223 @@
+<html>
+	<head>
+		<title> Reservations </title>
+		<link rel = "stylesheet" href = "../main_proj.css">
+		<script type="text/javascript" src="../jquery.js"></script>
+		<script type="text/javascript">
+		$("document").ready(function() {
+			$("td").css("padding", "5px").css("font-size","20px").css("color", "white").css("font-family", "Kristen ITC");
+			$("main").css("text-align", "center").css("color","white");
+			$("#bld", "t1").css("text-align", "center");
+			$("#p1").css("padding", "20px").css("font-size", "20px");
+			$("#r").css("padding", "20px").css("display", "block").css("margin-left", "auto").css("margin-right", "auto");
+			$("#frm1").css("padding" , "20px").css("float", "center");
+			$("fieldset").css("border-color", "red").css("width", "60%").css("padding-top", "50px").css("padding-bottom", "20px").css("padding-left" , "20px").css("padding-right", "20px");
+			$("legend").css("color" , "#ffff80").css("font-size", "20px").css("font-family", "Kristen ITC");
+			$("#btn1").css("float" ,"right");
+			$("#hello").css("float", "left").css("color", "white");
+			$("#hello1").css("float", "left");
+			$(":radio").wrap("<span style='background-color:red'>");
+				    $(":text").css("background-color", "red");
+		});
+			function greetings() {
+				var myDate = new Date();
+				var currentHr = myDate.getHours();
+				if (currentHr <12) {
+					document.getElementById("hello").innerHTML="Good Morning to Reserve a Seat!";
+					}
+				else if (currentHr <18) {
+					document.getElementById("hello").innerHTML="Good Afternoon to Reserve a Seat!";
+					}
+				else if (currentHr <20) {
+					document.getElementById("hello").innerHTML="Good Evening to Reserve a Seat!";
+				}
+				else {
+					document.getElementById("hello").innerHTML="Good Night to Reserve a Seat!";
+				}
+
+			}
+
+
+			function validateForm() {
+				var fname = document.getElementById("txtfname").value;
+				var lname = document.getElementById("txtlname").value;
+				var email = document.getElementById("email").value;
+				var phone = document.getElementById("txtphone").value;
+				var date = document.getElementById("reservationdate").value;
+				var time = document.getElementById("reservationtime").value;
+
+				var isValid = true;
+
+				if (fname =="") {
+				document.getElementById("fname_error").innerHTML="This is a required field";
+				isValid=false;
+				}
+				else  {
+					document.getElementById("fname_error").innerHTML=" ";
+				}
+				if (lname =="") {
+				document.getElementById("lname_error").innerHTML="This is a required field";
+				isValid=false;
+				}
+				else  {
+					document.getElementById("lname_error").innerHTML=" ";
+				}
+				if (email =="") {
+				document.getElementById("email_error").innerHTML="This is a required field";
+				isValid=false;
+				}
+				else  {
+					document.getElementById("email_error").innerHTML=" ";
+				}
+				if (phone =="") {
+				document.getElementById("phone_error").innerHTML="This is a required field";
+				isValid=false;
+				}
+				else  {
+					document.getElementById("phone_error").innerHTML=" ";
+				}
+				if (date =="") {
+				document.getElementById("date_error").innerHTML="This is a required field";
+				isValid=false;
+				}
+				else  {
+					document.getElementById("date_error").innerHTML=" ";
+				}
+				if (time =="") {
+				document.getElementById("time_error").innerHTML="This is a required field";
+				isValid=false;
+				}
+				else  {
+					document.getElementById("time_error").innerHTML=" ";
+				}
+
+				if(isValid) {
+					document.getElementById("frm1").submit();
+				}
+			}
+
+		</script>
+	</head>
+
+	<body>
+
+	<br>
+
+	<p id= "hello"> It is a.. </p> <br><br> <button id= "hello1" onclick="greetings()"> What Day?</button>
+	<button id="btn1" onclick="this.innerHTML=Date()"> The Date is... </button> <br>
+
+	<header>
+		<img src = "../images/logo.jpg" height = "60" width = "80">
+		<h1 id = "title"> B A Y V I E W  &nbsp;   R E S T A U R A N T </h1>
+		<a href="home_css.html">Home</a>&nbsp;&nbsp;&nbsp;
+		<a href="menu.html">Menu</a>&nbsp;&nbsp;&nbsp;
+        <a href="giftCard_js.html">GiftCard</a>&nbsp;&nbsp;&nbsp;
+        <a href="jsreservation.html">Reservation</a>&nbsp;&nbsp;&nbsp;
+        <a href="catering_jq.html">Catering</a>&nbsp;&nbsp;&nbsp;
+        <a href="location.html">Locations</a>&nbsp;&nbsp;&nbsp;
+		<a href="cust_feedback_js.html">Feedback</a>
+
+	</header>
+
+	<br>
+
+	<main>
+		<br>
+		<img src = "../images/reserve.jpg" width ="1000px" height="500px" id = "r"> <br>
+
+		<h1 id= "t1"> RESERVE A SPOT AT YOUR NEAREST LOCATION! </h1>
+
+		<p id ="p1"> Our restaurant welcomes everyone to dine with us through this reservation process. <br>
+		Once you fill out the form, press submit reservation and a comfirmation email will be sent shortly!
+		</p>
+		<br> <br> <br>
+
+		<center>
+		<fieldset>
+		<legend><b>Reserve Below</b></legend>
+
+		<form method= "get" action="next.html" id = "frm1">
+
+		<table>
+			<tr>
+				<td> FirstName: </td>
+				<td> <input type = "text" id = "txtfname" placeholder= "Enter your first name" size = "30">
+				<span id= "fname_error"> * </span> </td>
+			</tr>
+			<tr>
+				<td> LastName: </td>
+				<td> <input type = "text" id = "txtlname" placeholder= "Enter your last name" size = "30">
+				<span id= "lname_error"> * </span> </td>
+			</tr>
+			<tr>
+				<td> Email : </td>
+				<td> <input type = "text" id = "email" placeholder= "Enter your email" size = "30">
+				<span id= "email_error"> * </span> </td>
+			</tr>
+			<tr>
+				<td> Phone Number: </td>
+				<td> <input type = "text" id = "txtphone" placeholder= "Enter phone number" maxlength = "10" size = "30">
+				<span id= "phone_error"> * </span> </td>
+			</tr>
+			<tr>
+				<td> Date of Reservation: </td>
+				<td> <input type = "date" id = "reservationdate" size = "15">
+				<span id= "date_error"> * </span> </td>
+			</tr>
+			<tr>
+				<td> Time of Reservation: </td>
+				<td> <input type = "time" id = "reservationtime" size ="15">
+				<span id= "time_error"> * </span> </td>
+			</tr>
+			<tr>
+				<td> Party of: <td>
+					<input type="radio" id="party1" value="2" checked> 2 <br>
+					<input type="radio" id="party2" value="3"> 3 <br>
+					<input type="radio" id="party3" value="4"> 4 <br>
+					<input type="radio" id="party4" value="more"> More
+					<br> <br> <textarea> </textarea>
+				</td>
+
+			</tr>
+
+			</table>
+
+			<br>
+
+			<input type = "button" onclick = "validateForm()" value = "Submit Reservation">
+			<input type = "button" name = "btnReset" value = "Reset">
+
+		</fieldset>
+		</center>
+
+		</form>
+
+		</main>
+		<br>
+		<br>
+
+		<footer>
+			<h2 align="center"><u>CONTACT US</u></h2>
+			<p align="center"><b>Head Office</b>:-Bayview Restaurant
+            <br> Open – 07:00 AM Close – 01:30 AM
+            <br>
+            <b>Contact -</b> +647-540-8888;
+            <img src="../images/Email.png" height="20" width="20">info@bayview.in
+            <br>
+            <br>
+         <div>
+            &copy;Copyright Star Hotels <br>
+            <img src="../images/facebook.png" height="17" width="25">Facebook</img>
+            <img src="../images/twitter.png" height="17" width="15">Twitter</img>
+            <img src="../images/instagram.png" height="17" width="20">Instagram</img>
+         </div>
+		</footer>
+	</body>
+
+
+
+
+
+
+
+</html>
